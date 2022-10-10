@@ -20,12 +20,13 @@ if (dataInLocalStorage) {
 }
 
 function onFormInput(evt) {
-  const { email, message } = evt.currentTarget;
+  formData[evt.target.name] = evt.target.value;
 
-  formData = {
-    email: email.value,
-    message: message.value,
-  };
+  // const { email, message } = evt.target;
+  // formData = {
+  //   email: email.value,
+  //   message: message.value,
+  // };
   localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
 }
 
